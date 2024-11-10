@@ -1,19 +1,19 @@
-import axiosInstance from "../api/axios";
 import Button from "../components/Button";
 import InputField from "../components/InputField";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Card from "../components/Card";
+import axios from "axios";
 
 const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const onClickHandler = async () => {
-    const myPromise = axiosInstance({
+    const myPromise = axios({
       method: "post",
-      url: "/api/auth/signin",
+      url: "https://empmanagement-i4jf.onrender.com/api/auth/signin",
       data: {
         username,
         password

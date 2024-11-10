@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { toast } from "sonner"
-import axiosInstance from "../api/axios"
+import axios from "axios"
 
 const DeleteEmployee = ({ id }) => {
   const navigate = useNavigate()
@@ -11,9 +11,9 @@ const DeleteEmployee = ({ id }) => {
       navigate("/signin");
     }
 
-    const myPromise = axiosInstance({
+    const myPromise = axios({
       method: "delete",
-      url: `/api/employees/${id}`,
+      url: `https://empmanagement-i4jf.onrender.com/api/employees/${id}`,
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`

@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { employeeSchema } from "../lib/schema";
-import axiosInstance from "../api/axios";
+import axios from "axios";
 
 const CreateEmployee = () => {
   const [name, setName] = useState("");
@@ -34,9 +34,9 @@ const CreateEmployee = () => {
       navigate("/signin");
     }
 
-    const myPromise = axiosInstance({
+    const myPromise = axios({
       method: "post",
-      url: "/api/employees",
+      url: "https://empmanagement-i4jf.onrender.com/api/employees",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`

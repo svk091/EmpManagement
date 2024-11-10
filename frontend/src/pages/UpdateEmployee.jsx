@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import { toast } from "sonner";
 import { useNavigate, useParams } from "react-router-dom";
 import { employeeSchema } from "../lib/schema";
-import axiosInstance from "../api/axios";
+import axios from "axios";
 
 const UpdateEmployee = () => {
   const [name, setName] = useState("");
@@ -60,9 +60,9 @@ const UpdateEmployee = () => {
       return;
     }
 
-    const myPromise = axiosInstance({
+    const myPromise = axios({
       method: "put",
-      url: `/api/employees/${params.id}`,
+      url: `https://empmanagement-i4jf.onrender.com/api/employees/${params.id}`,
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
