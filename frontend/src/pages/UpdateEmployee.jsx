@@ -24,7 +24,7 @@ const UpdateEmployee = () => {
     if (!token) {
       navigate("/signin");
     }
-    const myPromise = axiosInstance({
+    const myPromise = axios({
       method: "get",
       url: `/api/employees/employee/${params.id}`,
       headers: {

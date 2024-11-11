@@ -75,10 +75,10 @@ const CreateEmployee = () => {
 
       <Label label="Designation">
         <select className="p-2 w-full rounded-xl tracking-widest border-2 font-serif" defaultValue={""} name="designation" id="designation" onChange={(e) => setDesignation(e.target.value)}>
-          <option value="" selected={designation === ""} />
-          <option value="hr" selected={designation === "hr"} />
-          <option value="manager" selected={designation === "manager"} />
-          <option value="sales" selected={designation === "sales"} />
+          <option value="" selected={designation === ""}>Select Designation</option>
+          <option value="hr" selected={designation === "hr"}>HR</option>
+          <option value="manager" selected={designation === "manager"}>Manager</option>
+          <option value="sales" selected={designation === "sales"}>Sales</option>
         </select>
       </Label>
       {errors.designation && <p className="text-red-500">{"Select Designation"}</p>}
@@ -97,10 +97,10 @@ const CreateEmployee = () => {
 
       <Label label="Course">
         <select className="p-2 w-full rounded-xl tracking-widest border-2 font-serif" name="course" id="course" onChange={(e) => setCourse(e.target.value)}>
-          <option value="" selected={course === ""} />
-          <option value="mca" selected={course === "mca"} />
-          <option value="bca" selected={course === "bca"} />
-          <option value="bsc" selected={course === "bsc"} />
+          <option value="" selected={course === ""}>Select Course</option>
+          <option value="mca" selected={course === "mca"}>MCA</option>
+          <option value="bca" selected={course === "bca"}>BCA</option>
+          <option value="bsc" selected={course === "bsc"}>BSC</option>
         </select>
       </Label>
       {errors.course && <p className="text-red-500">{"Select Course"}</p>}
