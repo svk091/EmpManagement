@@ -26,7 +26,7 @@ const UpdateEmployee = () => {
     }
     const myPromise = axios({
       method: "get",
-      url: `/api/employees/employee/${params.id}`,
+      url: `https://empmanagement-i4jf.onrender.com/api/employees/employee/${params.id}`,
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${token}`
