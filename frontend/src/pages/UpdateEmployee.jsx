@@ -130,7 +130,7 @@ const UpdateEmployee = () => {
       {errors.course && <p className="text-red-500">{"Select Course"}</p>}
 
       <div className="flex space-x-2">
-        <Button className={"bg-white hover:bg-slate-100 text-black border-black"} label="Cancel" onClick={() => {
+        <Button label="Cancel" onClick={() => {
           navigate("/employees");
         }} />
         <Button label="Update Employee" onClick={onClickHandler} />
