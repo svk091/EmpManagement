@@ -4,7 +4,7 @@ import EditEmployee from "../components/EditEmployee";
 const Th = ({ children }) => <th className="px-2 py-1 border-2">{children}</th>;
 const Td = ({ children }) => <td className="px-2 py-1 border-2">{children}</td>;
 
-const EmployeeTable = ({ employees }) => {
+const EmployeeTable = ({ employees, setEmployees }) => {
   if (!Array.isArray(employees)) {
     return <div>Error: Employees data is not in a valid format.</div>;
   }
@@ -38,7 +38,7 @@ const EmployeeTable = ({ employees }) => {
               <Td>
                 <div className="flex space-x-2 items-center">
                   <EditEmployee id={employee._id} />
-                  <DeleteEmployee id={employee._id} />
+                  <DeleteEmployee setEmployees={setEmployees} id={employee._id} />
                 </div>
               </Td>
             </tr>

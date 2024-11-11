@@ -49,7 +49,7 @@ const EmployeeList = () => {
       },
 
     });
-  }, [])
+  }, [navigate])
 
   return <div className="flex flex-col">
     <Navbar />
@@ -73,7 +73,7 @@ const EmployeeList = () => {
       <div className="px-6">
         {
           isLoading ? <div>Loading...</div> :
-            <EmployeeTable employees={filteredEmployees.length > 0 ? filteredEmployees : employees} />
+            <EmployeeTable setEmployees={setEmployees} employees={filteredEmployees.length > 0 ? filteredEmployees : employees} />
         }
       </div>
     </div>

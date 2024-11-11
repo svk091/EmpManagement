@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { toast } from "sonner"
 import axios from "axios"
 
-const DeleteEmployee = ({ id }) => {
+const DeleteEmployee = ({ id, setEmployees }) => {
   const navigate = useNavigate()
 
   const onClickHandler = async () => {
@@ -23,12 +23,21 @@ const DeleteEmployee = ({ id }) => {
     toast.promise(myPromise, {
       loading: 'Deleting...',
       success: (data) => {
-        navigate(0);
+        const myPromise = axios({
+          method: "get",
+          url: "https://empmanagement-i4jf.onrender.com/api/employees",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`
+          },
+        })
+        myPromise.then((response) => {
+          setEmployees(response.data);
+        })
         return "Deleted Employee";
       },
       error: (e) => {
         if (e.response.status === 401) {
-
           navigate("/signin");
         }
         return e.response.data.error;
