@@ -23,8 +23,7 @@ const DeleteEmployee = ({ id }) => {
     toast.promise(myPromise, {
       loading: 'Deleting...',
       success: (data) => {
-        navigate("/employees");
-        window.location.reload();
+        navigate(0);
         return "Deleted Employee";
       },
       error: (e) => {
